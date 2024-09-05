@@ -17,6 +17,7 @@ import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/authContext";
 import MoreMenu from "./MoreMenu";
+import NavMenu from "./NavMenu";
 
 function App() {
   const {currentUser} = useContext(AuthContext);
@@ -26,14 +27,7 @@ function App() {
   const Layout = () => {
     return (
       <div className={`theme-${darkMode ? "dark" : "light"}`}>
-        <Navbar />
-        <div style={{ display: "flex" }}>
-          {/* <LeftBar /> */}
-          <div style={{ flex: 6 }}>
-            <Outlet />
-          </div>
-          {/* <RightBar /> */}
-        </div>
+      <NavMenu/>
       </div>
     );
   };
